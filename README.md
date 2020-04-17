@@ -16,6 +16,16 @@ Global Packages:
     Update all dependencies to their major versions: ncu -u 
     Install updated packages: npm install
     Check global dependencies: ncu -g
+  Automation
+    Options for a taskrunner include Grunt, Gulp, and npm scripts
+    Use npm scripts
+      add to scripts section in package.json
+      npm start at command line runs start script
+      npm test at command line runs test script
+      npm run <scriptname> runs any other npm scripts
+        pre<scriptname> will run prior to <scriptname>, if present
+        post<scriptname> will run after <scriptname> if present
+      
 
 Project Packages:
   Development Web Server:
@@ -36,11 +46,9 @@ Project Packages:
         Create start script, and type now to serve to the cloud
       surge: deploys static files to a public cloud. Can also be use for hosting and automated deployments
         Install: npm surge -g
-
-
-
-Copy the package.json file to your project directory
-Run npm install -g npm-check-updates
-Run ncu -u to update all dependencies to their major versions using the tool installed above
-Run npm install to install the dependencies from the package.json file
+  
+  Transpiler
+    Options include Babel, TypeScript, and Elm
+      There are hundreds of options. Many modern languages transpile to JavaScript
+    Use Babel: babel-node allows you to use modern javascript for your build scripts
 

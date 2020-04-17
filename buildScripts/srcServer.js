@@ -1,11 +1,11 @@
 // Express build script
-var express = require('express');
-var path = require('path');
-var open = require('open');
+import express from 'express';
+import path from 'path';
+import open from 'open';
 
-var appFilepath = path.join(__dirname, '../src/index.html');
-var port = 3000;
-var app = express();
+const appFilepath = path.join(__dirname, '../src/index.html');
+const port = 3000;
+const app = express();
 
 app.get('/', function(req, res) {
   res.sendFile(appFilepath);

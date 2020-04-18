@@ -52,3 +52,13 @@ Project Packages:
       There are hundreds of options. Many modern languages transpile to JavaScript
     Use Babel: babel-node allows you to use modern javascript for your build scripts
 
+  Module Format
+    Options include CommonJS, such as native to Node, and ES6 Modules
+    To use ES6 Modules, you need a bundler like Webpack
+
+  Bundler
+    Options include Browserify, Webpack, Rollup, and JSPM
+    Use Webpack
+      Loaders allow you to bundle JavaScript, CSS, and more
+      Add more notes and optimize configuration with Webpack course
+    Disable AdBlock in Chrome to use SourceMaps when debugging

@@ -50,15 +50,52 @@ Project Packages:
   Transpiler
     Options include Babel, TypeScript, and Elm
       There are hundreds of options. Many modern languages transpile to JavaScript
-    Use Babel: babel-node allows you to use modern javascript for your build scripts
+    * Use Babel: babel-node allows you to use modern javascript for your build scripts
+      Configure with additional plugins to work with experimental lanuage features
 
   Module Format
     Options include CommonJS, such as native to Node, and ES6 Modules
+    * Use ES6 Modules
     To use ES6 Modules, you need a bundler like Webpack
 
   Bundler
     Options include Browserify, Webpack, Rollup, and JSPM
-    Use Webpack
+    * Use Webpack
       Loaders allow you to bundle JavaScript, CSS, and more
       Add more notes and optimize configuration with Webpack course
     Disable AdBlock in Chrome to use SourceMaps when debugging
+
+  Linter
+    * Use ESLint with ESLint-watch to lint all JavaScript files
+      Use builtin preset rules as a starting point and customize rules as needed
+      To work with experimental JavaScript features, try babel-eslint
+      
+      In the console, run `npm run lint:watch` to start process to watch files and lint when you save to provide near real time feedback on warnings and errors. lint:watch script also set to run in parallel on npm start.
+  
+  Atomated Testing
+    What to test:
+      Test types include Unit, Integration, and UI
+      * Start with Unit testing: tests functions and modules
+      Look to other frameworks for automated integration and UI testing
+    Framework: 
+      * Mocha: Popular standard, requires a separate assertion library
+      Jasmine: Similar to mocha, includes assertion library, less flexible
+      Jest: Popular for React development, extends Jasmine
+    Assertion Library:
+      * *hai: most popular
+    Helper Library
+      * JSDOM: Simulates the browser's DOM for running your tests
+      Cheerio: Allows you to query a virtual DOM using jQuery selectors
+    Where to put them?
+      Centralized, in a test folder
+      * Alongside the file
+      * Set a naming convention for test files: fileName.test.js
+    Where to run them?
+      In the browser? Options include Karma and Testem
+      In a headless browser, like PhantomJS
+      * In a simulated browser, with an In-memory DOM, like JSDOM
+    When to run them?
+      Run unit tests on save
+        Rapid feedback, facilitates TDD
+      Run integration and UI tests on deployment
+    

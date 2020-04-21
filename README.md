@@ -84,7 +84,7 @@ Project Packages:
     Assertion Library:
       * *hai: most popular
     Helper Library
-      * JSDOM: Simulates the browser's DOM for running your tests
+      * JSDOM: Simulates the browser's DOM for running your tests https://github.com/jsdom/jsdom
       Cheerio: Allows you to query a virtual DOM using jQuery selectors
     Where to put them?
       Centralized, in a test folder
@@ -98,4 +98,10 @@ Project Packages:
       Run unit tests on save
         Rapid feedback, facilitates TDD
       Run integration and UI tests on deployment
+
+  Continuous Integration
+    Verifies build when code is committed
+    Options inlude Jenkins, Travis, Appveyoy, CircleCI
+    May also feed into an automated deployment
+    
     

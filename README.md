@@ -100,8 +100,11 @@ Project Packages:
       Run integration and UI tests on deployment
 
   Continuous Integration
-    Verifies build when code is committed
-    Options inlude Jenkins, Travis, Appveyoy, CircleCI
-    May also feed into an automated deployment
+    Verifies build when code is committed. May also feed into an automated deployment.
+    Options inlude Jenkins, Travis, Appveyor, CircleCI
+    GitHub also has intergrated build test and deployment flows for node.js
+    * Use TravisCI for a public repo for an opensource project
+        Enable CI for a project here https://travis-ci.org/account/repositories
+        Tutorial: https://docs.travis-ci.com/user/tutorial/
     
     

@@ -106,5 +106,18 @@ Project Packages:
     * Use TravisCI for a public repo for an opensource project
         Enable CI for a project here https://travis-ci.org/account/repositories
         Tutorial: https://docs.travis-ci.com/user/tutorial/
+
+  HTTP Requests
+    Within Node.js, use the native http, or the request package
+    Within the browser, you could use Fetch w/ polyfills for older browsers or a package like Axios
+
+    It's a best practice to centralize API calls
+      Helps with standardizing format
+      Simplifies preloader logic and handling errors
+      Simplifies testing by making it easy to mock an API
+    
+    * Use Fetch w/ polyfill
+        import 'whatwg-fetch' will add polyfill regardless of browser
+        polyfill.io provides an api that will polyfill specific features only if needed by the client
     
     

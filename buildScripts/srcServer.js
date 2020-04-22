@@ -23,6 +23,15 @@ app.get('/', function(req, res) {
   res.sendFile(appFilepath);
 });
 
+app.get('/users', function(req, res) {
+  // Used to mock a call to an API
+  res.json([
+    {"id":1, "firstName":"Bob", "lastName":"Jones", "email": "b.jones@example.com"},
+    {"id":2, "firstName":"Alice", "lastName":"Baker", "email": "a.baker@example.com"},
+    {"id":3, "firstName":"Ray", "lastName":"Smith", "email": "r.smith@example.com"}
+  ]);
+});
+
 app.listen(port, function(err) {
   if (err) {
     console.log(err);

@@ -119,5 +119,12 @@ Project Packages:
     * Use Fetch w/ polyfill
         import 'whatwg-fetch' will add polyfill regardless of browser
         polyfill.io provides an api that will polyfill specific features only if needed by the client
-    
+
+  Mocking HTTP
+    - static JSON
+    - api-mock and JSON server use static JSON with a mock-API that you can interact with
+    - JSON Schema faker generates randomized data for a schema you specify
+    * Use JSON Server + JSON Schema Faker to produce randomized data
+      - User JSON Schema to declare the shape of the data
+
     

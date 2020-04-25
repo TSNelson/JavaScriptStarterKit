@@ -6,7 +6,7 @@ import {getUsers, deleteUser} from './api/userApi';
 getUsers().then(result => {
   let usersBody = '';
 
-  result.forEach(user => {
+  for (const user of result) {
     usersBody += `<tr>
     <td><a href="#" data-id="${user.id}" class="deleteUser">Delete</a></td>
     <td>${user.id}</td>
@@ -14,7 +14,7 @@ getUsers().then(result => {
     <td>${user.lastName}</td>
     <td>${user.email}</td>
     </tr>`
-  });
+  }
 
   global.document.getElementById('users').innerHTML = usersBody;
 

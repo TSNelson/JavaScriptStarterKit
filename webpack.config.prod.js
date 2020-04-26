@@ -2,12 +2,13 @@
 import webpack from 'webpack';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import WebpackMd5Hash from 'webpack-md5-hash'
+import WebpackMd5Hash from 'webpack-md5-hash';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 export default {
   devtool: 'source-map',
 
-  mode: 'production', // check if this belongs in production
+  mode: 'production',
 
   entry: {
     main: path.resolve(__dirname, 'src/index')
@@ -35,6 +36,10 @@ export default {
     }),
     // Hash files for dynamically generated filenames
     new WebpackMd5Hash(),
+    // Generate external CSS files with dynamically generated filenames
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css'
+    }),
     // Dynamically generate HTML
     new HtmlWebpackPlugin({
       template: 'src/index.html',
@@ -56,8 +61,13 @@ export default {
 
   module: {
     rules: [
-      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
-      {test: /\.css$/, loaders: ['style-loader','css-loader']}
+      { test: /\.js$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
+      },
+      { test: /\.css$/,
+        use: [{loader: MiniCssExtractPlugin.loader}, 'css-loader']
+      }
     ]
   }
 }

@@ -2,22 +2,23 @@
 import webpack from 'webpack';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import WebpackMd5Hash from 'webpack-md5-hash'
 
 export default {
   devtool: 'source-map',
 
   mode: 'production', // check if this belongs in production
 
-  entry: [
-    path.resolve(__dirname, 'src/index')
-  ],
+  entry: {
+    main: path.resolve(__dirname, 'src/index')
+  },
 
   target: 'web',
 
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: '[name].[chunkhash].js'
   },
 
   optimization: {
@@ -32,6 +33,8 @@ export default {
         debug: true,
         noInfo: false,
     }),
+    // Hash files for dynamically generated filenames
+    new WebpackMd5Hash(),
     // Dynamically generate HTML
     new HtmlWebpackPlugin({
       template: 'src/index.html',

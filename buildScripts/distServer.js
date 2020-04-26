@@ -5,19 +5,20 @@
 import express from 'express';
 import path from 'path';
 import open from 'open';
-import compression from 'compression';
+import compression from 'compression'; // this gzip compression is not working
 
 const appFilepath = path.join(__dirname, '../dist/index.html');
 const port = 3000;
 const app = express();
 
-app.use(compression());
-app.use(express.static('dist'));
-
 // Middleware
 
-// Routes
+  // Compress responses
+app.use(compression());
+  // Serve static HTML
+app.use(express.static('dist'));
 
+// Routes
 app.get('/', function(req, res) {
   res.sendFile(appFilepath);
 });

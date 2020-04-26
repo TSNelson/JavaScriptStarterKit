@@ -61,7 +61,8 @@ Project Packages:
   Bundler
     Options include Browserify, Webpack, Rollup, and JSPM
     * Use Webpack
-      Loaders allow you to bundle JavaScript, CSS, and more
+      Loaders allow you to bundle JavaScript, CSS
+      Allows for bundle splitting, speeding up page loads for complex applications
       Add more notes and optimize configuration with Webpack course
     Disable AdBlock in Chrome to use SourceMaps when debugging
 
@@ -126,5 +127,12 @@ Project Packages:
     - JSON Schema faker generates randomized data for a schema you specify
     * Use JSON Server + JSON Schema Faker to produce randomized data
       - User JSON Schema to declare the shape of the data
+
+  Dynamic HTML
+    Build process dynamically generates HTML for the application.
+    * Use HTML-Webpack-plugin
+      Injects the bundle into the HTML
+      Minifies HTML
+      Use to implement cache busting with dynamically generated filenames
 
     

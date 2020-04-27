@@ -1,6 +1,22 @@
+<!--
+  Note:
+  This is a template for index.html
+  It uses ejs and HTMLWebpackPlugin to generate a different index.html depending on the build environment. HTMLWebpackPlugin will dynamically add references to bundled javascript files and css files. The filenames include hash values that are calculated in the build, so the filenames have to be added dynamically.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- BEGIN EJS HTML TEMPLATE DEMO -->
+  <% if (htmlWebpackPlugin.options.someToken) { %>
+    <script type="text/javascript">console.log('Entering ejs scriptblock...');</script>
+    <script type="text/javascript">var myData = (function() {return {myToken: '<%=htmlWebpackPlugin.options.someToken%>'};})();</script>
+    <script type="text/javascript">console.log(myData);</script>
+    <script type="text/javascript">console.log('The above script adds an object with the name myData to the window object if htmlWebpackPlugin.options.someToken evaluates to true, and this value is only defined in the production webpack configuration.');</script>
+  <% } %>
+  <!-- END EJS HTML TEMPLATE DEMO -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JavaScript Starter Kit</title>

@@ -135,4 +135,12 @@ Project Packages:
       Minifies HTML
       Use to implement cache busting with dynamically generated filenames
 
-    
+   Error Tracking
+    Reports errors in production application
+    Options include TrackJS, Sentry, New Relic, Raygun
+    None of these options are free.
+    Can use builtin support for html templates with html-webpack-plugin to conditionally included the error tracking code only in production.
+  
+  HTML Templates
+    HTML-Webpack-plugin supports many HTML template options, including ejs, handlebars, underscore, and more 
+    Default templating engine is ejs, embedded JavaScript templating; https://ejs.co/

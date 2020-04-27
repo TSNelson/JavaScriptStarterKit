@@ -55,7 +55,9 @@ export default {
         minifyJS: true,
         minifyCSS: true,
         minifyURLs: true
-      }
+      },
+      // Properties defined here are available in index.html using htmlWebpackPlugin.options (see index.html for an example)
+      someToken: 'ExampleTokenValue'
     })
   ],
 
@@ -70,4 +72,4 @@ export default {
       }
     ]
   }
-}
+};

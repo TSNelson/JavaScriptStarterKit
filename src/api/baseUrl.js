@@ -1,11 +1,13 @@
 
+const prodAPI_URL = 'https://peaceful-lowlands-02993.herokuapp.com/'
+
 export default function getBaseUrl() {
   // Set to use url for mock api if hosted locally:
   // const inDevelopment = window.location.hostname === 'localhost';
   // return inDevelopment ? 'http://localhost:3001/' : '/'
 
   // Toggle use of mock api by adding the query string ../?useMockApi=true
-  return getParameterByName('useMockApi') ? 'http://localhost:3001/' : '/';
+  return getParameterByName('useMockApi') ? 'http://localhost:3001/' : prodAPI_URL;
 }
 
 function getParameterByName(name, url) {

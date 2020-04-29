@@ -144,3 +144,52 @@ Project Packages:
   HTML Templates
     HTML-Webpack-plugin supports many HTML template options, including ejs, handlebars, underscore, and more 
     Default templating engine is ejs, embedded JavaScript templating; https://ejs.co/
+
+  Hosting
+    Consider creating separate projects for the UI and the API
+      Built-in separation of concerns
+      Faciliates teams working independently on each
+      Each have different hosting needs. UI is easier and cheaper to host
+      Use different technologies for API
+    Cloud Hosting
+      Full-Featured options include: aws, azure, heroku, firebase, google cloud platform
+      Options for hosting static files include: netlify, github pages, surge
+    * Hosting API on heroku
+    * Hosting UI on Surge 
+
+    For the demo, the API is broken out into a separate project that will be hosted on Heroku; see js-dev-env-demo-api
+
+    The static HTML pages are deployed to Surge through the deploy script
+    See here: https://surge.sh/
+      Host static webpages for free, even specifying your own domain
+    Build Scripts:
+      While in development, use: npm start
+      Perform a production build: npm run build
+      Deploy to production: npm run deploy
+      Remove a surge deployment: surge teardown <URL>
+
+Handling Updates:
+  Tools and strategies for keeping your projects up to date.
+  
+  Using Yeoman
+    Create a Yeoman generator for your project environment
+    Existing generator setups are a good source of ideas for your starter kit
+    To update with Yeoman:
+      Commit all your files
+      Run the generator over your existing project
+      Approve file overwrites as needed
+      Diff the files to resolve any conflicts
+  
+  Using Github
+    Host Starter Kit on github
+    For new projects from Starter Kit
+    Pull changes to the starter kit into existing projects
+  
+  Using npm
+    Encapsulate kit in an npm package
+    Update the npm package to receive the latest updates
+      This means you can't customize the npm package to the project
+    
+For Ideas and Inspiration
+  React starter kits: andrewhfarmer.com/starter-project
+  Search on your framework and a keyword like starter kit, starter project, boilerplate, development environment, or seed

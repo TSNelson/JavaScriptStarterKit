@@ -23,6 +23,7 @@ app.get('/', function(req, res) {
   res.sendFile(appFilepath);
 });
 
+/* Disabled route for serving static JSON data
 app.get('/users', function(req, res) {
   // Used to mock a call to an API
   res.json([
@@ -31,6 +32,7 @@ app.get('/users', function(req, res) {
     {"id":3, "firstName":"Ray", "lastName":"Smith", "email": "r.smith@example.com"}
   ]);
 });
+//*/
 
 app.listen(port, function(err) {
   if (err) {
